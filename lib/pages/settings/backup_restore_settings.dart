@@ -6,7 +6,7 @@ import 'dart:io';
 
 import 'package:daily_you/config_provider.dart';
 import 'package:daily_you/device_info_service.dart';
-import 'package:daily_you/main.dart';
+import 'package:daily_you/main_native.dart';
 import 'package:daily_you/notification_manager.dart';
 import 'package:daily_you/storage/storage_picker.dart';
 import 'package:daily_you/time_manager.dart';

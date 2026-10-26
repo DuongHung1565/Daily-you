@@ -12,6 +12,16 @@ subprojects {
 subprojects {
     project.evaluationDependsOn(':app')
 }
+subprojects {
+    // Match each module's Java target even when Gradle runs on a newer JDK.
+    tasks.configureEach { task ->
+        if (task.hasProperty('kotlinOptions')) {
+            def androidExtension = project.extensions.findByName('android')
+            task.kotlinOptions.jvmTarget =
+                androidExtension?.compileOptions?.targetCompatibility?.toString() ?: '17'
+        }
+    }
+}
 
 tasks.register("clean", Delete) {
     delete rootProject.buildDir

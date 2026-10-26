@@ -4,7 +4,8 @@
 
 import 'dart:io';
 import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
-import 'package:daily_you/main.dart';
+import 'package:daily_you/l10n/background_localizations.dart';
+import 'package:daily_you/main_native.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -52,9 +53,12 @@ class NotificationManager {
     _notifications = flutterLocalNotificationsPlugin;
 
     await _notifications!.initialize(
-        settings: const InitializationSettings(
-            android: AndroidInitializationSettings('@drawable/ic_notification'),
-            linux: LinuxInitializationSettings(defaultActionName: 'Log Today')),
+        settings: InitializationSettings(
+            android: const AndroidInitializationSettings(
+                '@drawable/ic_notification'),
+            linux: LinuxInitializationSettings(
+                defaultActionName:
+                    backgroundAppLocalizations().dailyReminderTitle)),
         onDidReceiveNotificationResponse: backupCancelBackgroundHandler,
         onDidReceiveBackgroundNotificationResponse:
             backupCancelBackgroundHandler);

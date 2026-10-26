@@ -1,0 +1,17 @@
+{
+    "name": "Daily You",
+    "short_name": "Daily You",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#f7f3fb",
+    "theme_color": "#6650A4",
+    "description": "Nhật ký và tâm trạng riêng tư trên trình duyệt.",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-1024.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        }
+    ]
+}

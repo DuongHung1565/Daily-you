@@ -8,6 +8,7 @@ import 'dart:io';
 import 'package:daily_you/config_provider.dart';
 import 'package:daily_you/database/app_database.dart';
 import 'package:daily_you/database/attachment_storage.dart';
+import 'package:daily_you/l10n/background_localizations.dart';
 import 'package:daily_you/models/attachment.dart';
 import 'package:daily_you/notification_manager.dart';
 import 'package:daily_you/storage/file_store.dart';
@@ -21,6 +22,8 @@ import 'package:daily_you/utils/zip_utils.dart';
 import 'package:daily_you/widgets/app_dialog.dart';
 import 'package:daily_you/widgets/auth_popup.dart';
 import 'package:material_ui/material_ui.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'
+    as flutter_l10n;
 import 'package:daily_you/l10n/generated/app_localizations.dart';
 import 'package:logging/logging.dart';
 import 'package:path/path.dart';
@@ -202,16 +205,17 @@ class BackupRestoreUtils {
 
   static Future<AutoBackupOutcome> _runAutoBackupAndNotify() async {
     final prefs = await SharedPreferences.getInstance();
-    final creatingTemplate = prefs.getString('creatingBackupStatusTemplate');
-    final encryptingTemplate =
-        prefs.getString('encryptingBackupStatusTemplate');
-    final transferringTemplate = prefs.getString('tranferStatusTemplate');
-    final failedTitle =
-        prefs.getString('autoBackupFailedTitle') ?? 'Backup Failed';
-    final cancelLabel = prefs.getString('backupCancelActionLabel');
-
-    String stageTitle(String? template, int percent) =>
-        template?.replaceFirst('{percent}', '$percent') ?? '';
+    final l10n = backgroundAppLocalizations();
+    final creatingTitle = l10n.creatingBackupStatus;
+    final encryptingTitle = l10n.encryptingBackupStatus;
+    final transferringTitle = l10n.tranferStatus;
+    final failedTitle = l10n.autoBackupFailedTitle;
+    final locale = backgroundLocale();
+    final cancelLabel = flutter_l10n.GlobalMaterialLocalizations.delegate
+            .isSupported(locale)
+        ? (await flutter_l10n.GlobalMaterialLocalizations.delegate.load(locale))
+            .cancelButtonLabel
+        : prefs.getString('backupCancelActionLabel');
 
     await NotificationManager.instance.clearBackupCancelRequest();
     final cancellationToken = CancellationToken();
@@ -224,9 +228,8 @@ class BackupRestoreUtils {
     });
 
     try {
-      await NotificationManager.instance.showBackupProgress(
-          0, stageTitle(creatingTemplate, 0),
-          cancelLabel: cancelLabel);
+      await NotificationManager.instance
+          .showBackupProgress(0, creatingTitle('0'), cancelLabel: cancelLabel);
     } catch (error, stackTrace) {
       _logger.warning(
           'Could not show backup progress notification', error, stackTrace);
@@ -235,23 +238,23 @@ class BackupRestoreUtils {
     var success = false;
     var cancelled = false;
     try {
-      String? shownTemplate = creatingTemplate;
+      String Function(String) shownTitle = creatingTitle;
       var shownPercent = 0;
-      void showStage(String? template, double percent) {
+      void showStage(String Function(String) title, double percent) {
         final rounded = percent.round();
-        if (template == shownTemplate && rounded - shownPercent < 5) return;
-        shownTemplate = template;
+        if (title == shownTitle && rounded - shownPercent < 5) return;
+        shownTitle = title;
         shownPercent = rounded;
         NotificationManager.instance.showBackupProgress(
-            rounded, stageTitle(template, rounded),
+            rounded, title('$rounded'),
             cancelLabel: cancelLabel);
       }
 
       success = await runAutoBackup(
         cancellationToken: cancellationToken,
-        onCompress: (percent) => showStage(creatingTemplate, percent),
-        onEncrypt: (percent) => showStage(encryptingTemplate, percent),
-        onTransfer: (percent) => showStage(transferringTemplate, percent),
+        onCompress: (percent) => showStage(creatingTitle, percent),
+        onEncrypt: (percent) => showStage(encryptingTitle, percent),
+        onTransfer: (percent) => showStage(transferringTitle, percent),
       );
     } on BackupCancelledException {
       cancelled = true;

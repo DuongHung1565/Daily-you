@@ -10,7 +10,7 @@ import 'package:daily_you/database/app_database.dart';
 import 'package:daily_you/database/attachment_storage.dart';
 import 'package:daily_you/device_info_service.dart';
 import 'package:daily_you/launch_intent.dart';
-import 'package:daily_you/main.dart';
+import 'package:daily_you/main_native.dart';
 import 'package:daily_you/utils/auto_backup_schedule.dart';
 import 'package:daily_you/utils/backup_restore_utils.dart';
 import 'package:daily_you/widgets/app_dialog.dart';

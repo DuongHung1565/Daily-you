@@ -1056,4 +1056,115 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get recorderErrorDescription => 'Failed to record audio!';
+
+  @override
+  String get webNewEntry => 'New entry';
+
+  @override
+  String get webEditEntry => 'Edit entry';
+
+  @override
+  String get webSave => 'Save';
+
+  @override
+  String get webCancel => 'Cancel';
+
+  @override
+  String get webDelete => 'Delete';
+
+  @override
+  String get webSearch => 'Search entries';
+
+  @override
+  String get webAllEntries => 'All entries';
+
+  @override
+  String get webMoodQuestion => 'How do you feel?';
+
+  @override
+  String get webMoodVeryBad => 'Very bad';
+
+  @override
+  String get webMoodBad => 'Bad';
+
+  @override
+  String get webMoodNeutral => 'Okay';
+
+  @override
+  String get webMoodGood => 'Good';
+
+  @override
+  String get webMoodGreat => 'Great';
+
+  @override
+  String get webTagsHint => 'Separate tags with commas';
+
+  @override
+  String get webAddTag => 'Add tag';
+
+  @override
+  String get webStorageUnavailable =>
+      'This browser cannot access IndexedDB. Your entries cannot be saved here.';
+
+  @override
+  String get webStorageFailure =>
+      'Could not save data in this browser. Check available storage and browser permissions.';
+
+  @override
+  String get webImageTooLarge => 'Choose an image smaller than 5 MB.';
+
+  @override
+  String get webImageUnsupported =>
+      'Only PNG, JPEG and WebP images are supported on the web.';
+
+  @override
+  String get webImageReadFailure => 'Could not read this image.';
+
+  @override
+  String get webDeleteConfirm => 'Delete this entry and its images?';
+
+  @override
+  String get webEntrySaved => 'Entry saved.';
+
+  @override
+  String get webEntryDeleted => 'Entry deleted.';
+
+  @override
+  String get webBrowserDataWarning =>
+      'Entries stay in this browser on this device. They do not sync with the Android or desktop app. Export a backup before clearing browser data.';
+
+  @override
+  String get webPhotoOnly =>
+      'The web version currently supports image attachments only. Audio and video are available in the native app.';
+
+  @override
+  String get webPickImage => 'Choose image';
+
+  @override
+  String get webRemoveImage => 'Remove image';
+
+  @override
+  String get webFilterByTag => 'Filter by tag';
+
+  @override
+  String get webGalleryEmpty => 'No images yet';
+
+  @override
+  String get webBackupExport => 'Export Web backup';
+
+  @override
+  String get webBackupImport => 'Import Web backup';
+
+  @override
+  String get webImportSuccess => 'Web backup imported.';
+
+  @override
+  String get webInvalidBackup =>
+      'This file is not a valid Daily You Web backup.';
+
+  @override
+  String get webExportError => 'Could not export the Web backup.';
+
+  @override
+  String get webImportError => 'Could not import the Web backup.';
 }

@@ -1943,6 +1943,216 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Failed to record audio!'**
   String get recorderErrorDescription;
+
+  /// No description provided for @webNewEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'New entry'**
+  String get webNewEntry;
+
+  /// No description provided for @webEditEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit entry'**
+  String get webEditEntry;
+
+  /// No description provided for @webSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get webSave;
+
+  /// No description provided for @webCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get webCancel;
+
+  /// No description provided for @webDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get webDelete;
+
+  /// No description provided for @webSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search entries'**
+  String get webSearch;
+
+  /// No description provided for @webAllEntries.
+  ///
+  /// In en, this message translates to:
+  /// **'All entries'**
+  String get webAllEntries;
+
+  /// No description provided for @webMoodQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'How do you feel?'**
+  String get webMoodQuestion;
+
+  /// No description provided for @webMoodVeryBad.
+  ///
+  /// In en, this message translates to:
+  /// **'Very bad'**
+  String get webMoodVeryBad;
+
+  /// No description provided for @webMoodBad.
+  ///
+  /// In en, this message translates to:
+  /// **'Bad'**
+  String get webMoodBad;
+
+  /// No description provided for @webMoodNeutral.
+  ///
+  /// In en, this message translates to:
+  /// **'Okay'**
+  String get webMoodNeutral;
+
+  /// No description provided for @webMoodGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Good'**
+  String get webMoodGood;
+
+  /// No description provided for @webMoodGreat.
+  ///
+  /// In en, this message translates to:
+  /// **'Great'**
+  String get webMoodGreat;
+
+  /// No description provided for @webTagsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Separate tags with commas'**
+  String get webTagsHint;
+
+  /// No description provided for @webAddTag.
+  ///
+  /// In en, this message translates to:
+  /// **'Add tag'**
+  String get webAddTag;
+
+  /// No description provided for @webStorageUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'This browser cannot access IndexedDB. Your entries cannot be saved here.'**
+  String get webStorageUnavailable;
+
+  /// No description provided for @webStorageFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save data in this browser. Check available storage and browser permissions.'**
+  String get webStorageFailure;
+
+  /// No description provided for @webImageTooLarge.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose an image smaller than 5 MB.'**
+  String get webImageTooLarge;
+
+  /// No description provided for @webImageUnsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'Only PNG, JPEG and WebP images are supported on the web.'**
+  String get webImageUnsupported;
+
+  /// No description provided for @webImageReadFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not read this image.'**
+  String get webImageReadFailure;
+
+  /// No description provided for @webDeleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this entry and its images?'**
+  String get webDeleteConfirm;
+
+  /// No description provided for @webEntrySaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Entry saved.'**
+  String get webEntrySaved;
+
+  /// No description provided for @webEntryDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Entry deleted.'**
+  String get webEntryDeleted;
+
+  /// No description provided for @webBrowserDataWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Entries stay in this browser on this device. They do not sync with the Android or desktop app. Export a backup before clearing browser data.'**
+  String get webBrowserDataWarning;
+
+  /// No description provided for @webPhotoOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'The web version currently supports image attachments only. Audio and video are available in the native app.'**
+  String get webPhotoOnly;
+
+  /// No description provided for @webPickImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose image'**
+  String get webPickImage;
+
+  /// No description provided for @webRemoveImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove image'**
+  String get webRemoveImage;
+
+  /// No description provided for @webFilterByTag.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by tag'**
+  String get webFilterByTag;
+
+  /// No description provided for @webGalleryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No images yet'**
+  String get webGalleryEmpty;
+
+  /// No description provided for @webBackupExport.
+  ///
+  /// In en, this message translates to:
+  /// **'Export Web backup'**
+  String get webBackupExport;
+
+  /// No description provided for @webBackupImport.
+  ///
+  /// In en, this message translates to:
+  /// **'Import Web backup'**
+  String get webBackupImport;
+
+  /// No description provided for @webImportSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Web backup imported.'**
+  String get webImportSuccess;
+
+  /// No description provided for @webInvalidBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'This file is not a valid Daily You Web backup.'**
+  String get webInvalidBackup;
+
+  /// No description provided for @webExportError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not export the Web backup.'**
+  String get webExportError;
+
+  /// No description provided for @webImportError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not import the Web backup.'**
+  String get webImportError;
 }
 
 class _AppLocalizationsDelegate
